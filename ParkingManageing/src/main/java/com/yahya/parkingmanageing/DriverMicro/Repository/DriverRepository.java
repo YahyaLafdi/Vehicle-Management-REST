@@ -1,14 +1,10 @@
-package com.yahya.parkingmanageing.Entity.Model.Repository;
+package com.yahya.parkingmanageing.DriverMicro.Repository;
 
-import com.yahya.parkingmanageing.Entity.GenericEnum.Availability;
-import com.yahya.parkingmanageing.Entity.Model.VehicleDriver;
+import com.yahya.parkingmanageing.DriverMicro.Model.VehicleDriver;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 
 @Repository

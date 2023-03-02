@@ -1,8 +1,7 @@
-package com.yahya.parkingmanageing.Entity.Model;
+package com.yahya.parkingmanageing.DriverMicro.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.yahya.parkingmanageing.Entity.GenericEnum.LicensesCategory;
+import com.yahya.parkingmanageing.GenericEnum.LicensesCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

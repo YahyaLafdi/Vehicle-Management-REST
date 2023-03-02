@@ -1,9 +1,8 @@
-package com.yahya.parkingmanageing.Entity.Model.Service;
+package com.yahya.parkingmanageing.DriverMicro.Service;
 
-import com.yahya.parkingmanageing.Entity.GenericEnum.LicensesCategory;
-import com.yahya.parkingmanageing.Entity.Model.DriverLicenseIssuance;
-import com.yahya.parkingmanageing.Entity.Model.Repository.DriverLicenseRepository;
-import com.yahya.parkingmanageing.Entity.Model.Repository.DriverRepositoryIssuance;
+import com.yahya.parkingmanageing.GenericEnum.LicensesCategory;
+import com.yahya.parkingmanageing.DriverMicro.Model.DriverLicenseIssuance;
+import com.yahya.parkingmanageing.DriverMicro.Repository.DriverRepositoryIssuance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

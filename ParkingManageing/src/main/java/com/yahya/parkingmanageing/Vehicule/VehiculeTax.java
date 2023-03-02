@@ -1,4 +1,4 @@
-package com.yahya.parkingmanageing.Entity.Vehicule;
+package com.yahya.parkingmanageing.Vehicule;
 
 import java.sql.Date;
 

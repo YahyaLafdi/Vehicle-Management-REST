@@ -1,7 +1,7 @@
-package com.yahya.parkingmanageing.Entity.Vehicule;
+package com.yahya.parkingmanageing.Vehicule;
 
 
-import com.yahya.parkingmanageing.Entity.GenericEnum.VehiculeEnergy;
+import com.yahya.parkingmanageing.GenericEnum.VehiculeEnergy;
 
 public class Vehicule {
      private int id;

@@ -1,9 +1,6 @@
-package com.yahya.parkingmanageing.Entity.Model.Service;
+package com.yahya.parkingmanageing.DriverMicro.Service;
 
-import com.yahya.parkingmanageing.Entity.Model.License;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.yahya.parkingmanageing.DriverMicro.Model.License;
 
 public interface DriverLicenseService {
     License getDriverLicenseById(Long id);
