@@ -1,6 +1,6 @@
-package com.yahya.parkingmanageing.Entity.Vehicule;
+package com.yahya.parkingmanageing.Vehicule;
 
-import com.yahya.parkingmanageing.Entity.GenericEnum.LicensesCategory;
+import com.yahya.parkingmanageing.GenericEnum.LicensesCategory;
 
 import java.sql.Date;
 

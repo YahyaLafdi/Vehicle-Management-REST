@@ -1,8 +1,7 @@
-package com.yahya.parkingmanageing.Entity.Model;
+package com.yahya.parkingmanageing.DriverMicro.Model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.yahya.parkingmanageing.Entity.GenericEnum.Availability;
-import com.yahya.parkingmanageing.Entity.GenericEnum.Status;
+import com.yahya.parkingmanageing.GenericEnum.Availability;
+import com.yahya.parkingmanageing.GenericEnum.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

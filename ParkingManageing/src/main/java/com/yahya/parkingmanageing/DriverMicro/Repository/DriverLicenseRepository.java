@@ -1,7 +1,6 @@
-package com.yahya.parkingmanageing.Entity.Model.Repository;
+package com.yahya.parkingmanageing.DriverMicro.Repository;
 
-import com.yahya.parkingmanageing.Entity.Model.License;
-import com.yahya.parkingmanageing.Entity.Model.VehicleDriver;
+import com.yahya.parkingmanageing.DriverMicro.Model.License;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
