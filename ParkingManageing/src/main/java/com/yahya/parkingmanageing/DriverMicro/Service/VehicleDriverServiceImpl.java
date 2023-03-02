@@ -4,6 +4,7 @@ import com.yahya.parkingmanageing.DriverMicro.Model.DriverLicenseIssuance;
 import com.yahya.parkingmanageing.DriverMicro.Model.License;
 import com.yahya.parkingmanageing.DriverMicro.Repository.DriverRepository;
 import com.yahya.parkingmanageing.DriverMicro.Model.VehicleDriver;
+import com.yahya.parkingmanageing.GenericEnum.Availability;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -78,5 +79,10 @@ public class VehicleDriverServiceImpl implements VehicleDriverService {
         license.setVehicleDriver(tmp);
         driverLicenseService.addDriverLicense(license);
 
+    }
+
+    @Override
+    public List<VehicleDriver> getVehicleDriverByAvailability(Availability availability) {
+        return driverRepository.findByAvailability(availability);
     }
 }

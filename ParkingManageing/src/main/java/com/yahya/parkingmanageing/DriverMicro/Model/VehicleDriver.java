@@ -19,6 +19,7 @@ public class VehicleDriver implements Serializable {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
 
     private Long id;
+    @Column(unique = true)
     private String employeeNumber;
     private String LastName;
     private String FirstName;

@@ -3,6 +3,7 @@ package com.yahya.parkingmanageing.DriverMicro.Service;
 import com.yahya.parkingmanageing.DriverMicro.Model.DriverLicenseIssuance;
 import com.yahya.parkingmanageing.DriverMicro.Model.License;
 import com.yahya.parkingmanageing.DriverMicro.Model.VehicleDriver;
+import com.yahya.parkingmanageing.GenericEnum.Availability;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public interface VehicleDriverService {
     public void addIssuanceToDriverByEmployeeNumber(String Employee , DriverLicenseIssuance issuance);
 
     public void addLicenseToDriverByEmployeeNumber(String Employee , License issuance);
+    List<VehicleDriver> getVehicleDriverByAvailability(Availability availability);
 
 
 

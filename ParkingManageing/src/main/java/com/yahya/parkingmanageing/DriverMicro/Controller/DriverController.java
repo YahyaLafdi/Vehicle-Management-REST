@@ -7,6 +7,7 @@ import com.yahya.parkingmanageing.DriverMicro.Service.DriverLicenseService;
 import com.yahya.parkingmanageing.DriverMicro.Service.DriverLicenseServiceIssuance;
 import com.yahya.parkingmanageing.DriverMicro.Service.VehicleDriverService;
 import com.yahya.parkingmanageing.DriverMicro.Model.VehicleDriver;
+import com.yahya.parkingmanageing.GenericEnum.Availability;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,45 +28,51 @@ public class DriverController {
     public List<VehicleDriver> getAllVehicleDrivers(){
         return driverService.getVehicleDrivers();
     }
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public VehicleDriver getVehicleDriver(@PathVariable long id){
 
         return driverService.getVehicleDriverById(id);
     }
-    @GetMapping("/number/{num}")
-    public VehicleDriver getVehicleDriverByNumber(@PathVariable String num){
-
-        return driverService.getVehicleDriver(num);
-    }
     @PostMapping (value = "/",consumes = "application/json;charset=UTF-8")
     public void addVehicleDriver(@RequestBody VehicleDriver tmp){
 
-         driverService.addVehicleDriver(tmp);
+        driverService.addVehicleDriver(tmp);
     }
-    @DeleteMapping  (value = "/{id}")
+    @DeleteMapping  (value = "/id/{id}")
     public void DeleteVehicleDriver(@PathVariable long id){
 
         driverService.deleteVehicleDriverById(id);
     }
-    @DeleteMapping("/number/{num}")
+    @GetMapping("/{num}")
+    public VehicleDriver getVehicleDriverByNumber(@PathVariable String num){
+
+        return driverService.getVehicleDriver(num);
+    }
+
+    @DeleteMapping("/{num}")
     public void deleteVehicleDriverByNumber(@PathVariable String num){
 
          driverService.deleteVehicleDriverByEmployeeNum(num);
     }
 
-    @PostMapping ("/number/{num}/issuances")
+    @PostMapping ("/{num}/issuances")
     public void addIssuanceToDriverByEmployeeNumber(@PathVariable String num, @RequestBody DriverLicenseIssuance Issuance){
 
                 driverService.addIssuanceToDriverByEmployeeNumber(num,Issuance);
 
 
     }
-    @PostMapping ("/number/{num}/licence")
+    @PostMapping ("/{num}/licences")
     public void addLicenceToDriverByEmployeeNumber(@PathVariable String num, @RequestBody License license){
 
         driverService.addLicenseToDriverByEmployeeNumber(num,license);
 
 
+    }
+    @GetMapping("/available/{available}")
+    public List<VehicleDriver> getVehicleDriverByNumber(@PathVariable Availability available){
+
+        return driverService.getVehicleDriverByAvailability(available);
     }
 
 
