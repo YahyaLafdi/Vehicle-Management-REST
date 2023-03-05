@@ -21,7 +21,6 @@ private Date DateOfUsing;
     private Date DateOfValidity;
     private String Brand;
     private String Owner;
-    private LicensesCategory Category;
     @OneToOne(mappedBy = "registration" )
     private Vehicle vehicle;
 

@@ -27,7 +27,9 @@ public class VehicleDriver implements Serializable {
     private String Cin;
     private String Skills;
     private String Certifications;
+    @Enumerated(EnumType.STRING)
     private Availability availability;
+    @Enumerated(EnumType.STRING)
     private Status status;
 
 
