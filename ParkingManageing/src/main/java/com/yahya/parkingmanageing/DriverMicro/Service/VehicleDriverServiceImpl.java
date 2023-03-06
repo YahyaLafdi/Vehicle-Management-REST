@@ -33,7 +33,7 @@ public class VehicleDriverServiceImpl implements VehicleDriverService {
     }
 
     @Override
-    public VehicleDriver getVehicleDriver(String EmployeeNumber) {
+    public VehicleDriver getVehicleDriverByemp(String EmployeeNumber) {
 
         return driverRepository.findByEmployeeNumber(EmployeeNumber);
 
@@ -66,7 +66,7 @@ public class VehicleDriverServiceImpl implements VehicleDriverService {
     @Override
     public void addIssuanceToDriverByEmployeeNumber(String employeeNumber, DriverLicenseIssuance issuance) {
 
-        License tmp = getVehicleDriver(employeeNumber).getDriverLicense();
+        License tmp = getVehicleDriverByemp(employeeNumber).getDriverLicense();
         issuance.setDriverLicense(tmp);
         driverLicenseServiceIssuance.addDriverLicenseIssuance(issuance);
 
@@ -75,7 +75,7 @@ public class VehicleDriverServiceImpl implements VehicleDriverService {
 
     @Override
     public void addLicenseToDriverByEmployeeNumber(String employeeNumber, License license) {
-        VehicleDriver tmp = getVehicleDriver(employeeNumber);
+        VehicleDriver tmp = getVehicleDriverByemp(employeeNumber);
         license.setVehicleDriver(tmp);
         driverLicenseService.addDriverLicense(license);
 

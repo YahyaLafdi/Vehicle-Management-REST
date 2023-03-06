@@ -18,7 +18,7 @@ public interface VehicleDriverService {
         public VehicleDriver getVehicleDriverById(Long id);
              // fetch by employee_NUM
              @Transactional
-        public VehicleDriver getVehicleDriver(String EmployeeNumber);
+        public VehicleDriver getVehicleDriverByemp(String EmployeeNumber);
     //CREATE
     @Transactional
      public void addVehicleDriver(VehicleDriver temp);

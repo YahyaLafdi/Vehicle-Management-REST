@@ -46,7 +46,7 @@ public class DriverController {
     @GetMapping("/{num}")
     public VehicleDriver getVehicleDriverByNumber(@PathVariable String num){
 
-        return driverService.getVehicleDriver(num);
+        return driverService.getVehicleDriverByemp(num);
     }
 
     @DeleteMapping("/{num}")
