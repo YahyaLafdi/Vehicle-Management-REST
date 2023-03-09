@@ -17,7 +17,7 @@ import java.sql.Date;
 @Entity
 public class Mission  extends GenericEntity {
 
-    private String missionId;
+    private String missionCode;
     private Date missionStartDate;
     private Date missionEndDate;
     private String Destination;

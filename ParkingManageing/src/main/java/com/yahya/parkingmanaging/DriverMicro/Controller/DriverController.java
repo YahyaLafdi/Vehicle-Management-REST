@@ -3,12 +3,11 @@ package com.yahya.parkingmanaging.DriverMicro.Controller;
 
 import com.yahya.parkingmanaging.DriverMicro.Model.DriverLicenseIssuance;
 import com.yahya.parkingmanaging.DriverMicro.Model.License;
-import com.yahya.parkingmanaging.DriverMicro.Service.DriverLicenseService;
-import com.yahya.parkingmanaging.DriverMicro.Service.DriverLicenseServiceIssuance;
 import com.yahya.parkingmanaging.DriverMicro.Service.VehicleDriverService;
 import com.yahya.parkingmanaging.DriverMicro.Model.VehicleDriver;
 import com.yahya.parkingmanaging.GenericEnum.Availability;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,10 +18,7 @@ public class DriverController {
 
     @Autowired
     private VehicleDriverService driverService;
-    @Autowired
-    private DriverLicenseService licenseService;
-    @Autowired
-    private DriverLicenseServiceIssuance issuancessuanceService;
+
 
     @GetMapping("/")
     public List<VehicleDriver> getAllVehicleDrivers(){
@@ -34,6 +30,7 @@ public class DriverController {
         return driverService.getVehicleDriverById(id);
     }
     @PostMapping (value = "/",consumes = "application/json;charset=UTF-8")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addVehicleDriver(@RequestBody VehicleDriver tmp){
 
         driverService.addVehicleDriver(tmp);
@@ -56,6 +53,7 @@ public class DriverController {
     }
 
     @PostMapping ("/{num}/issuances")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addIssuanceToDriverByEmployeeNumber(@PathVariable String num, @RequestBody DriverLicenseIssuance Issuance){
 
                 driverService.addIssuanceToDriverByEmployeeNumber(num,Issuance);
@@ -63,6 +61,7 @@ public class DriverController {
 
     }
     @PostMapping ("/{num}/licences")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addLicenceToDriverByEmployeeNumber(@PathVariable String num, @RequestBody License license){
 
         driverService.addLicenseToDriverByEmployeeNumber(num,license);

@@ -19,14 +19,14 @@ public class DriverLicenseIssuance implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private Date IssuanceDate;
+    private Date issuanceDate;
     @Enumerated(EnumType.STRING)
     private LicensesCategory type;
 
 
     @ManyToOne
     @JsonIgnore
-    private License DriverLicense;
+    private License driverLicense;
 
 
 }
