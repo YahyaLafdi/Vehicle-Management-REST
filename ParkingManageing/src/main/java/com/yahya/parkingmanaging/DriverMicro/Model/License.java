@@ -29,7 +29,7 @@ public class License implements Serializable {
    private VehicleDriver vehicleDriver;
 
 
-    @OneToMany(cascade=CascadeType.ALL ,mappedBy = "DriverLicense",fetch = FetchType.EAGER)
+    @OneToMany(cascade=CascadeType.ALL ,mappedBy = "driverLicense",fetch = FetchType.EAGER)
 
     private List<DriverLicenseIssuance> driverLicenseIssuanceList;
 

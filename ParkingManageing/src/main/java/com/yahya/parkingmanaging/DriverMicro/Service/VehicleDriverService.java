@@ -6,6 +6,7 @@ import com.yahya.parkingmanaging.DriverMicro.Model.VehicleDriver;
 import com.yahya.parkingmanaging.GenericEnum.Availability;
 import jakarta.transaction.Transactional;
 
+import java.sql.Date;
 import java.util.List;
 
 
@@ -38,7 +39,8 @@ public interface VehicleDriverService {
     public void addLicenseToDriverByEmployeeNumber(String Employee , License issuance);
     List<VehicleDriver> getVehicleDriverByAvailability(Availability availability);
 
-
+    List<VehicleDriver> getAvailableDrivers();
+    boolean isVehicleDriverAvailable(Date start , Date endDate, VehicleDriver vehicleDriver);
 
 
 

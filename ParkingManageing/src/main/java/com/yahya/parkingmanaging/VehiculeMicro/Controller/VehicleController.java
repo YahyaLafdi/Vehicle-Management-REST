@@ -1,8 +1,10 @@
 package com.yahya.parkingmanaging.VehiculeMicro.Controller;
 
 
+import com.yahya.parkingmanaging.GenericEnum.LicensesCategory;
 import com.yahya.parkingmanaging.VehiculeMicro.Model.Vehicle;
 import com.yahya.parkingmanaging.VehiculeMicro.Service.VehiculeService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +12,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/vehicles")
+@AllArgsConstructor
 public class VehicleController {
+
 
     @Autowired
     private VehiculeService vehiculeService;
@@ -33,5 +37,10 @@ public class VehicleController {
     public Vehicle getVehicleByPlate(@PathVariable String plate){
 
         return vehiculeService.getVehicleByPlate(plate);
+    }
+    @GetMapping("/category/{category}")
+    public List<Vehicle> getVehicleByCategory(@PathVariable LicensesCategory category){
+
+        return vehiculeService.getVehicleByCategory(category);
     }
 }

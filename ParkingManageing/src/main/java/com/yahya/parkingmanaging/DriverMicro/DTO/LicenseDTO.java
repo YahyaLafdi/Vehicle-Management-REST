@@ -22,7 +22,7 @@ public class LicenseDTO implements Serializable {
 
 
 
-    private List<IssuanceDTO> driverLicenseIssuanceList;
+    private List<DriverLicenseIssuanceDTO> driverLicenseIssuanceList;
 
 
 

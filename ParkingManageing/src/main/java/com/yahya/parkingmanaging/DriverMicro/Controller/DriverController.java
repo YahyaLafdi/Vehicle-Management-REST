@@ -68,10 +68,15 @@ public class DriverController {
 
 
     }
-    @GetMapping("/available/{available}")
+    @GetMapping("/availablity/{available}")
     public List<VehicleDriver> getVehicleDriverByNumber(@PathVariable Availability available){
 
         return driverService.getVehicleDriverByAvailability(available);
+    }
+    @GetMapping("/available/")
+    public List<VehicleDriver> getVehicleAvailableDrivers(){
+
+        return driverService.getAvailableDrivers();
     }
 
 

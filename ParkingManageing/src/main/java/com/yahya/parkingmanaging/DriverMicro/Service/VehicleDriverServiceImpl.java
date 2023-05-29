@@ -8,7 +8,11 @@ import com.yahya.parkingmanaging.GenericEnum.Availability;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VehicleDriverServiceImpl implements VehicleDriverService {
@@ -84,5 +88,25 @@ public class VehicleDriverServiceImpl implements VehicleDriverService {
     @Override
     public List<VehicleDriver> getVehicleDriverByAvailability(Availability availability) {
         return driverRepository.findByAvailability(availability);
+    }
+
+    @Override
+    public List<VehicleDriver> getAvailableDrivers() {
+        List<VehicleDriver> allDrivers = driverRepository.findAll();
+        java.util.Date currentDate = java.util.Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        return allDrivers.stream()
+                .filter(driver ->
+                        driver.getMissions().stream()
+                                .allMatch(mission ->
+                                        mission.getMissionEndDate().before(currentDate) || mission.getMissionStartDate().after(currentDate)
+                                )
+                )
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean isVehicleDriverAvailable(Date start, Date endDate, VehicleDriver vehicleDriver) {
+        return vehicleDriver.getMissions().stream().anyMatch(mission -> mission.getMissionEndDate().after(start) && mission.getMissionStartDate().before(endDate));
+
     }
 }

@@ -14,7 +14,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @Data
 @Builder
-public class IssuanceDTO implements Serializable {
+public class DriverLicenseIssuanceDTO implements Serializable {
 
     private Date IssuanceDate;
 

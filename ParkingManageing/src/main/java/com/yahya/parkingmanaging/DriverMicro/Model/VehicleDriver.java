@@ -2,6 +2,7 @@ package com.yahya.parkingmanaging.DriverMicro.Model;
 
 import com.yahya.parkingmanaging.GenericEnum.Availability;
 import com.yahya.parkingmanaging.GenericEnum.Status;
+import com.yahya.parkingmanaging.MissionsMicro.Model.Mission;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +10,8 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -38,6 +41,7 @@ public class VehicleDriver implements Serializable {
     @OneToOne(mappedBy = "vehicleDriver",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 
     private License driverLicense;
-
+    @OneToMany(mappedBy = "vehicleDriver", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Mission> missions;
 
 }
